@@ -596,8 +596,8 @@ function startApp() {
   const sid = document.getElementById('setup-id').value.trim();
   if (!name) { document.getElementById('setup-name').focus(); return; }
   currentUser = name;
-  storageKey = 'tradelog_' + name.toLowerCase().replace(/\s+/g,'_') + (sid ? '_'+sid : '');
-  localStorage.setItem('tradelog_last_user', JSON.stringify({ name, sid, key: storageKey }));
+  storageKey = 'Vince Trade Hub_' + name.toLowerCase().replace(/\s+/g,'_') + (sid ? '_'+sid : '');
+  localStorage.setItem('Vince Trade Hub_last_user', JSON.stringify({ name, sid, key: storageKey }));
   loadTrades();
   document.getElementById('setup-screen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
@@ -621,7 +621,7 @@ function switchUser() {
 // Auto-restore last user
 window.addEventListener('DOMContentLoaded', () => {
   try {
-    const last = JSON.parse(localStorage.getItem('tradelog_last_user'));
+    const last = JSON.parse(localStorage.getItem('Vince Trade Hub_last_user'));
     if (last && last.name) {
       document.getElementById('setup-name').value = last.name;
       document.getElementById('setup-id').value = last.sid || '';
