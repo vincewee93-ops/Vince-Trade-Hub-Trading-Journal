@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vince Trade Hub Trading Journal</title>
+<title>Vince Trade Hub Your Personal Trading Journal</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
@@ -415,7 +415,7 @@ tbody tr:hover td { background: var(--surface2); }
 <div id="setup-screen">
   <div class="setup-card">
     <div class="logo">Vince Trade Hub</div>
-    <div class="tagline">Trading Journal</div>
+    <div class="tagline">Your Personal Your Personal Trading Journal</div>
     <div class="field" style="text-align:left;margin-bottom:1.5rem">
       <label>Your name</label>
       <input id="setup-name" type="text" placeholder="e.g. Ahmad, Sarah…" autocomplete="off">
@@ -868,7 +868,7 @@ function exportText() {
   const wins = closed.filter(t => t.pl >= 0);
   const totalPL = closed.reduce((s,t) => s+t.pl, 0);
   const wr = closed.length ? (wins.length/closed.length*100).toFixed(1) : '0';
-  let txt = `VINCE TRADE HUB — TRADING JOURNAL REPORT\n${'='.repeat(40)}\nTrader: ${currentUser}\nPeriod: ${document.getElementById('r-from').value||'start'} → ${document.getElementById('r-to').value||today()}\n\n`;
+  let txt = `VINCE TRADE HUB — Your Personal Trading Journal REPORT\n${'='.repeat(40)}\nTrader: ${currentUser}\nPeriod: ${document.getElementById('r-from').value||'start'} → ${document.getElementById('r-to').value||today()}\n\n`;
   txt += `Total trades: ${list.length} | Closed: ${closed.length} | Win rate: ${wr}% | Total P&L: ${totalPL>=0?'+':''}${totalPL.toFixed(2)}\n\n`;
   txt += `TRADE LOG\n${'-'.repeat(40)}\n`;
   list.forEach(t => {
